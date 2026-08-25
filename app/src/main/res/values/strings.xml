@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Work Smart TV</string>
+    <string name="add_playlist">Añadir Lista</string>
+    <string name="m3u_url">URL Lista M3U</string>
+    <string name="xtream_server">Servidor Xtream</string>
+    <string name="xtream_username">Usuario</string>
+    <string name="xtream_password">Contraseña</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="live_tv">TV en Vivo</string>
+    <string name="movies">Películas</string>
+    <string name="series">Series</string>
+    <string name="favorites">Favoritos</string>
+</resources>
