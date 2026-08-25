@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Smart TV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Work Smart TV">
+                <h1>Work Smart TV</h1>
+            </div>
+            <ul class="menu">
+                <li class="active" data-section="home">
+                    <span class="icon">🏠</span>
+                    <span>Inicio</span>
+                </li>
+                <li data-section="live">
+                    <span class="icon">📺</span>
+                    <span>TV en Vivo</span>
+                </li>
+                <li data-section="movies">
+                    <span class="icon">🎬</span>
+                    <span>Películas</span>
+                </li>
+                <li data-section="series">
+                    <span class="icon">📺</span>
+                    <span>Series</span>
+                </li>
+                <li data-section="favorites">
+                    <span class="icon">⭐</span>
+                    <span>Favoritos</span>
+                </li>
+                <li data-section="guide">
+                    <span class="icon">📋</span>
+                    <span>Guía TV</span>
+                </li>
+                <li data-section="settings">
+                    <span class="icon">⚙️</span>
+                    <span>Ajustes</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Header -->
+            <header>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar canales..." id="searchInput">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <button class="add-playlist-btn" onclick="showAddPlaylist()">
+                    + Añadir Lista
+                </button>
+            </header>
+
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <h2>Continuar viendo</h2>
+                <div class="continue-watching" id="continueWatching">
+                    <!-- Se llena dinámicamente -->
+                </div>
+
+                <h2>Categorías</h2>
+                <div class="categories">
+                    <div class="category-card" data-category="news">
+                        <div class="category-icon">📰</div>
+                        <span>Noticias</span>
+                    </div>
+                    <div class="category-card" data-category="sports">
+                        <div class="category-icon">⚽</div>
+                        <span>Deportes</span>
+                    </div>
+                    <div class="category-card" data-category="entertainment">
+                        <div class="category-icon">🎭</div>
+                        <span>Entretenimiento</span>
+                    </div>
+                    <div class="category-card" data-category="kids">
+                        <div class="category-icon">🧸</div>
+                        <span>Infantil</span>
+                    </div>
+                    <div class="category-card" data-category="music">
+                        <div class="category-icon">🎵</div>
+                        <span>Música</span>
+                    </div>
+                    <div class="category-card" data-category="documentary">
+                        <div class="category-icon">🎥</div>
+                        <span>Documentales</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live TV Section -->
+            <section id="live" class="section">
+                <h2>Canales en Vivo</h2>
+                <div class="channels-grid" id="liveChannels">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Movies Section -->
+            <section id="movies" class="section">
+                <h2>Películas</h2>
+                <div class="channels-grid" id="moviesGrid">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Add Playlist Modal -->
+            <div id="playlistModal" class="modal">
+                <div class="modal-content">
+                    <h3>Añadir Lista de Reproducción</h3>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="switchTab('m3u')">Lista M3U</button>
+                        <button class="tab-btn" onclick="switchTab('xtream')">Xtream Codes</button>
+                    </div>
+
+                    <!-- M3U Form -->
+                    <div id="m3uTab" class="tab-content active">
+                        <input type="text" id="m3uName" placeholder="Nombre de la lista">
+                        <input type="url" id="m3uUrl" placeholder="URL de la lista M3U">
+                        <button onclick="addM3U()">Guardar Lista M3U</button>
+                    </div>
+
+                    <!-- Xtream Form -->
+                    <div id="xtreamTab" class="tab-content">
+                        <input type="text" id="xtreamName" placeholder="Nombre de la cuenta">
+                        <input type="url" id="xtreamServer" placeholder="URL del servidor">
+                        <input type="text" id="xtreamUsername" placeholder="Usuario">
+                        <input type="password" id="xtreamPassword" placeholder="Contraseña">
+                        <button onclick="addXtream()">Guardar Xtream Codes</button>
+                    </div>
+
+                    <button class="close-btn" onclick="closeModal()">✕</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
