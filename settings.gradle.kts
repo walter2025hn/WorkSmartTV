@@ -1,4 +1,5 @@
 pluginManagement {
+ pluginManagement {
     repositories {
         google()
         mavenCentral()
@@ -6,7 +7,8 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // Cambiamos a PREFER_SETTINGS para que use los repositorios definidos aquí
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
