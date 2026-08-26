@@ -12,6 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "SenalIPTV"
+rootProject.name = "WorkSmartTV"
 include(":app")
