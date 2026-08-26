@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Work Smart TV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Work Smart TV">
+            <h1>Work Smart TV</h1>
+        </div>
+        <span class="tagline">IPTV PLAYER · Tu entretenimiento, más inteligente</span>
+        <div class="settings-btn" onclick="openSettings()">⚙️</div>
+    </header>
+
+    <!-- Menú principal -->
+    <nav>
+        <button class="menu-btn active" data-category="live">📺 TV en Vivo</button>
+        <button class="menu-btn" data-category="movies">🎬 Películas</button>
+        <button class="menu-btn" data-category="series">📺 Series</button>
+        <button class="menu-btn" data-category="favorites">❤️ Favoritos</button>
+        <button class="menu-btn" data-category="guide">📅 Guía de TV</button>
+    </nav>
+
+    <!-- Reproductor (se muestra al hacer clic en un item) -->
+    <div id="playerContainer" style="display:none;">
+        <div id="videoWrapper">
+            <!-- El SurfaceView de ExoPlayer se superpone aquí -->
+        </div>
+        <div id="playerControls">
+            <button onclick="togglePlay()">⏯️</button>
+            <button onclick="changeScale('fit')">Escala: Fit</button>
+            <button onclick="changeScale('fill')">Fill</button>
+            <button onclick="changeScale('zoom')">Zoom</button>
+            <button onclick="changeResolution(0)">🔽 360p</button>
+            <button onclick="changeResolution(1)">720p</button>
+            <button onclick="changeResolution(2)">1080p</button>
+            <button onclick="changeResolution(3)">Auto</button>
+            <button onclick="closePlayer()">✖</button>
+        </div>
+    </div>
+
+    <!-- Contenido dinámico (grid de canales/películas) -->
+    <main id="content">
+        <div class="category-title">TV en Vivo</div>
+        <div id="grid" class="grid-container"></div>
+    </main>
+
+    <!-- Modal de configuración -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <h2>Configuración</h2>
+            <label>URL M3U:</label>
+            <input type="text" id="m3uUrl" placeholder="http://.../list.m3u">
+            <label>Xtream Codes:</label>
+            <input type="text" id="xtreamServer" placeholder="Servidor">
+            <input type="text" id="xtreamUser" placeholder="Usuario">
+            <input type="text" id="xtreamPass" placeholder="Contraseña">
+            <button onclick="loadPlaylist()">Cargar Lista</button>
+            <button onclick="closeSettings()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="js/iptv.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
